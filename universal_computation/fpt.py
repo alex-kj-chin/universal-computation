@@ -89,7 +89,28 @@ class FPT(nn.Module):
             # self.lstm_pos_embed = nn.Parameter(torch.zeros(1, 1024, embedding_size))
             # if freeze_pos:
             #     self.lstm_pos_embed.requires_grad = False
+        # Small Models
+        elif model_name == "distilBERT":
+            from transformers import DistilBertModel
 
+            self.sequence_model = DistilBertModel.from_pretrained("distilbert-base-uncased")
+            embedding_size = 768
+        elif model_name == "mobileBERT":
+            from transformers import MobileBertModel
+
+            self.sequence_model = MobileBertModel.from_pretrained("google/mobilebert-uncased")
+            embedding_size = 768 # I think this dimension is wrong
+        # Other Models
+        elif model_name == "XLNet":
+            from transformers import XLNetModel
+
+            self.sequence_model = XLNetModel.from_pretrained("xlnet-base-cased")
+            embedding_size = 768
+        elif model_name == "RoBERTa":
+            from transformers import RobertaModel
+
+            self.sequence_model = RobertaModel.from_pretrained("roberta-base")
+            embedding_size = 768
         else:
             raise NotImplementedError('model_name not implemented')
 
