@@ -1,5 +1,7 @@
 # universal-computation
 
+Jonathan Chu hates crypto
+
 ## Overview
 Official codebase for [Pretrained Transformers as Universal Computation Engines](https://arxiv.org/abs/2103.05247).
 Contains demo notebook and scripts to reproduce experiments.
