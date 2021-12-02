@@ -66,8 +66,6 @@ class CIFAR100Dataset(Dataset):
         if self.patch_size is not None:
             x = rearrange(x, 'b c (h p1) (w p2) -> b (h w) (p1 p2 c)', p1=self.patch_size, p2=self.patch_size)
 
-        print("x:", x)
-        print("y:", y)
         x = x.to(device=self.device)
         y = y.to(device=self.device)
 
