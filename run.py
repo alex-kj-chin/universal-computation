@@ -8,7 +8,7 @@ if __name__ == '__main__':
         task='cifar100',
         n=1000,                # ignored if not a bit task
         num_patterns=5,        # ignored if not a bit task
-        patch_size=50,
+        patch_size=16,
 
         model_name='gpt2',
         pretrained=True,       # if vit this is forced to true, if lstm this is forced to false
@@ -30,4 +30,9 @@ if __name__ == '__main__':
         orth_gain=1.41,        # orthogonal initialization of input layer
     )
 
-    run_experiment(experiment_name, experiment_params)
+    exp_args = dict(
+        num_iters=10,
+        device="cpu",
+    )
+
+    run_experiment(experiment_name, experiment_params, exp_args)

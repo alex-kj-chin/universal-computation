@@ -88,6 +88,13 @@ def experiment(
         use_embeddings = True
         experiment_type = 'classification'
 
+    elif task == "cifar100":
+        from universal_computation.datasets.cifar100 import CIFAR100Dataset
+        dataset = CIFAR100Dataset(batch_size=batch_size, patch_size=patch_size, device=device)
+        input_dim, output_dim = 3 * patch_size**2, 100
+        use_embeddings = False
+        experiment_type = 'classification'
+
     else:
         raise NotImplementedError('dataset not implemented')
 
