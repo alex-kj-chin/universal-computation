@@ -27,7 +27,7 @@ def preprocess_dataset(file_path, batch_size):
     tf.logging.info(file_path)
     sel_cols = ['Source', 'Target']
     col_defaults = [tf.string, tf.int32]
-    ds = tf.data.experimental.make_csv_dataset(["/content/drive/My Drive/6.864/universal-computation/" + file_path],
+    ds = tf.data.experimental.make_csv_dataset([file_path],
                                                batch_size,
                                                column_defaults=col_defaults,
                                                select_columns=sel_cols,

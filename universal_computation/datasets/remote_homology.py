@@ -22,7 +22,7 @@ class RemoteHomologyDataset(Dataset):
 
         self.max_seq_len = max_seq_len
 
-        data_dir = f'/content/drive/My Drive/6.864/universal-computation/data/{data_subdir}'
+        data_dir = f'/data/{data_subdir}'
         train_dataset = TAPERemoteHomologyDataset(data_dir, 'train')
         val_dataset = TAPERemoteHomologyDataset(data_dir, 'valid')
 
